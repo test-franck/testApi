@@ -1,0 +1,12 @@
+parameters:
+    info.article.handler.class: InfoBundle\Handler\ArticleHandler
+    info.article.class: InfoBundle\Entity\Article
+
+services:
+#    info.example:
+#        class: InfoBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+
+    info.article.handler:
+        class: %info.article.handler.class%
+        arguments: ["@doctrine.orm.entity_manager", %info.article.class%, '@form.factory']  

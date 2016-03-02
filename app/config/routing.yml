@@ -1,0 +1,18 @@
+client:
+    resource: "@ClientBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+#info:
+#    resource: "@InfoBundle/Controller/"
+#    type:     annotation
+#    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+route_info:
+    type: rest
+    prefix: /api
+    resource: "@InfoBundle/Resources/config/routes.yml"

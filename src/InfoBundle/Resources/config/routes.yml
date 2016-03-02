@@ -1,0 +1,5 @@
+api_info_article:
+    type: rest
+    prefix: /v1
+    resource: 'InfoBundle\Controller\ArticleController'
+    name_prefix:  api_1_
