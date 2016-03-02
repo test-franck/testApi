@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 class ArticleType extends AbstractType
 {
     /**
@@ -15,12 +17,12 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('description')
-            ->add('body')
+            ->add('title', TextType::class)
+            ->add('description', TextType::class)
+            ->add('body', TextType::class)
             //->add('createdAt', \Symfony\Component\Form\Extension\Core\Type\DateType::class)
             //->add('slug')
-            ->add('createdBy')
+            ->add('createdBy', TextType::class)
         ;
     }
     

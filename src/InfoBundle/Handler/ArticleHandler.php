@@ -18,9 +18,6 @@ class ArticleHandler implements ArticleHandlerInterface
     
     public function __construct(ObjectManager $om, $entityClass, FormFactoryInterface $formFactory) 
     {
-        
-        //var_dump($formFactory); die("titititit");
-        
         $this->om = $om;
         $this->entityClass = $entityClass;
         $this->repository = $this->om->getRepository($this->entityClass);
@@ -82,9 +79,6 @@ class ArticleHandler implements ArticleHandlerInterface
         $form = $this->formFactory->create(ArticleType::class, $article, array('method' => $method));
         
         $form->submit($parameters, 'PATCH' !== $method);
-        
-       // var_dump($form);
-        //die("ghghghg");
         
         if ($form->isValid()) { 
             $article = $form->getData();
