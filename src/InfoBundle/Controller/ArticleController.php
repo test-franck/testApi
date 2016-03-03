@@ -26,7 +26,7 @@ class ArticleController extends FOSRestController
      *
      *
      *
-     * @param Request               $request      the request object
+     * @param Request $request the request object
      * @param ParamFetcherInterface $paramFetcher param fetcher service
      *
      * @return array
@@ -70,7 +70,7 @@ class ArticleController extends FOSRestController
      * 
      * @Annotations\View(templateVar="article")
      *
-     * @param int     $id      the article id
+     * @param int $id the article id
      *
      * @return array
      *

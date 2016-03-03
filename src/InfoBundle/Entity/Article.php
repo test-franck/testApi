@@ -48,6 +48,7 @@ class Article implements ArticleInterface
     /**
      * @var \DateTime
      *
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="createdAt", type="datetime")
      */
     private $createdAt;
@@ -55,6 +56,7 @@ class Article implements ArticleInterface
     /**
      * @var \DateTime
      * 
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(name="updateAt", type="datetime", nullable=true)
      */
     private $updateAt;
@@ -73,19 +75,6 @@ class Article implements ArticleInterface
      * @ORM\Column(name="createdBy", type="string", length=200)
      */
     private $createdBy;
-    
-    public function __construct() 
-    {
-        $this->setCreatedAt(new \DateTime);
-    }
-
-    /**
-     * @ORM\PreUpdate
-     */
-    public function updateTime() 
-    {
-        $this->setUpdatedAt(new \DateTime());
-    }
 
     /**
      * Get id
@@ -170,20 +159,6 @@ class Article implements ArticleInterface
     }
 
     /**
-     * Set createdAt
-     *
-     * @param \DateTime $createdAt
-     *
-     * @return Article
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    /**
      * Get createdAt
      *
      * @return \DateTime
@@ -194,20 +169,6 @@ class Article implements ArticleInterface
     }
 
     /**
-     * Set updateAt
-     *
-     * @param \DateTime $updateAt
-     *
-     * @return Article
-     */
-    public function setUpdatedAt($updateAt)
-    {
-        $this->updatedAt = $updateAt;
-
-        return $this;
-    }
-
-    /**
      * Get updateAt
      *
      * @return \DateTime
@@ -215,20 +176,6 @@ class Article implements ArticleInterface
     public function getUpdatedAt()
     {
         return $this->updateAt;
-    }
-    
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     *
-     * @return Article
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
     }
 
     /**

@@ -61,29 +61,11 @@ interface ArticleInterface
     public function getBody();
 
     /**
-     * Set createdAt
-     *
-     * @param \DateTime $createdAt
-     *
-     * @return Article
-     */
-    public function setCreatedAt($createdAt);
-
-    /**
      * Get createdAt
      *
      * @return \DateTime
      */
     public function getCreatedAt();
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     *
-     * @return Article
-     */
-    public function setSlug($slug);
 
     /**
      * Get slug
@@ -107,15 +89,6 @@ interface ArticleInterface
      * @return string
      */
     public function getCreatedBy();
-    
-    /**
-     * Set updateAt
-     *
-     * @param \DateTime $updateAt
-     *
-     * @return Article
-     */
-    public function setUpdatedAt($updateAt);
     
     /**
      * Get updateAt

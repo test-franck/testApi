@@ -84,6 +84,7 @@ stof_doctrine_extensions:
     orm:
         default:
             sluggable: true
+            timestampable: true
 
 fos_rest:
     param_fetcher_listener: true
